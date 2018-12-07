@@ -1,0 +1,24 @@
+version: '3'
+services:
+
+  heros:
+    build: ./Heros
+    environment:
+      - TRACKEUR_URL=http://trackeur:5002
+    ports:
+      - "5000:5000"
+    
+  vilains:
+    build: ./Vilains
+    environment:
+      - TRACKEUR_URL=http://trackeur:5002
+    ports:
+      - "5001:3000"
+
+  trackeur:
+    build: ./Trackeur
+    environment:
+      - VILAINS_URL=http://vilains:3000
+      - HEROS_URL=http://heros:5000
+    ports:
+      - "5002:5002"

@@ -1,0 +1,17 @@
+{
+  "name": "Vilains",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker": "sls offline start --host 0.0.0.0"
+  },
+  "author": "Geoffrey PELISSIER, Atman MADADI, Alexandre SONNIC, Amine YAICI",
+  "license": "ISC",
+  "dependencies": {
+    "serverless": "^1.33.2",
+    "serverless-offline": "^3.31.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
