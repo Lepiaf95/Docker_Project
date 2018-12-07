@@ -1,3 +1,7 @@
+##  cd
+
+cd marvel_dc
+
 ##  Docker-compose
 
 Run `docker-compose up` for running the servers.
