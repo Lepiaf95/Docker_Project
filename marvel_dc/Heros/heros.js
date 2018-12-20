@@ -8,11 +8,14 @@ let score = 0;
 let cityH = 'Paris';
 
 app.post('/', (req, res) => {
-  // Attention probleme à venir...
   if (cityH === req.body.cityV) {
     score += req.body.count;
-    console.log('Ok t\'es mort !! J\'ai actuellement ' +
-      score + ' victimes à mon compte');
+    if (req.body.count === 0) {
+      console.log('');
+    } else {
+      console.log('Ok t\'es mort !! J\'ai actuellement ' +
+        score + ' victimes à mon compte');
+    }
   } else {
     cityH = req.body.cityV;
     score += req.body.count;
@@ -21,6 +24,8 @@ app.post('/', (req, res) => {
       score + ' victimes à mon compte');
   }
   console.log('');
+  // Empeche le bug de la disparition de la dernière instruction !
+  // Attention potentiel probleme à venir...
   res.end('hello');
 });
 

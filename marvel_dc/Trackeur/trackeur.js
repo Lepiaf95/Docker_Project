@@ -6,8 +6,14 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/', (req, res) => {
-  console.log('Vilain pas beau apparu à ' + req.body.cityV);
+  if (req.body.count === 0) {
+    console.log('');
+  } else {
+    console.log('Vilain pas beau apparu à ' + req.body.cityV);
+  }
   console.log('');
+  // Empeche le bug de la disparition de la dernière instruction !
+  // Attention potentiel probleme à venir...
 
   const options = {
     method: 'POST',

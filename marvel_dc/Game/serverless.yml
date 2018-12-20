@@ -1,0 +1,15 @@
+service: Marvel_DC
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  start:
+    handler: game.start
+    events:
+      - http: POST /start
+
+
+plugins:
+- serverless-offline

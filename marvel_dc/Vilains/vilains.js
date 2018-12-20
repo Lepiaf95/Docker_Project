@@ -1,5 +1,9 @@
-// Serverless
+const express = require('express');
+const bodyParser = require('body-parser');
 const rp = require('request-promise');
+
+const app = express();
+app.use(bodyParser.json());
 
 const count = 0;
 const city = ['Paris', 'Marseille', 'Nice'];
@@ -11,7 +15,6 @@ const apparition = {
   count
 };
 
-// Envoie une requete POST à la place de Postman
 const options = {
   method: 'POST',
   url: process.env.TRACKEUR_URL,
@@ -22,22 +25,21 @@ const options = {
   body: apparition
 };
 
-// Timer des requetes
-const start = () => {
+app.post('/', (req, res) => {
+  console.log(req.body.start);
   rp(options);
+
+  // Timer des requetes
   setInterval(async () => {
     apparition.count = Math.floor(Math.random() * Math.floor(100));
-    apparition.cityV = city[Math.floor(Math.random() * Math.floor(city.length))];
+    apparition.cityV =
+     city[Math.floor(Math.random() * Math.floor(city.length))];
     await rp(options);
   }, 5000);
-};
-
-// eslint-disable-next-line require-await
-const apparitionHandler = async msg => ({
-  status: 200,
-  body: JSON.stringify(await start(JSON.parse(msg.body)))
+  console.log('');
+  res.end('hello');
 });
 
-module.exports = {
-  apparitionHandler
-};
+app.listen(5001, () => {
+  console.log('app listening on port 5001!');
+});
