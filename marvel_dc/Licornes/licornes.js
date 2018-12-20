@@ -5,19 +5,19 @@ const rp = require('request-promise');
 const app = express();
 app.use(bodyParser.json());
 
-const countV = 0;
+const countL = 0;
 const city = ['Paris', 'Marseille', 'Nice'];
 const random = 0;
 
 const apparition = {
   city,
-  cityV: city[random],
-  countV
+  cityL: city[random],
+  countL
 };
 
 const options = {
   method: 'POST',
-  url: process.env.TRACKEUR_URL,
+  url: process.env.FOURNISSEUR_URL,
   headers: {
     'Content-Type': 'application/json'
   },
@@ -31,15 +31,15 @@ app.post('/', (req, res) => {
 
   // Timer des requetes
   setInterval(async () => {
-    apparition.countV = Math.floor(Math.random() * Math.floor(100));
-    apparition.cityV =
+    apparition.countL = 1;
+    apparition.cityL =
      city[Math.floor(Math.random() * Math.floor(city.length))];
     await rp(options);
-  }, 5000);
+  }, 7000);
   console.log('');
   res.end('hello');
 });
 
-app.listen(5001, () => {
-  console.log('app listening on port 5001!');
+app.listen(6001, () => {
+  console.log('app listening on port 6001!');
 });

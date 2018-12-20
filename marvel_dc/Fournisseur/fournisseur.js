@@ -6,10 +6,10 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/', (req, res) => {
-  if (req.body.countV === 0) {
+  if (req.body.countL === 0) {
     console.log('');
   } else {
-    console.log('Vilain pas beau apparu à ' + req.body.cityV);
+    console.log('Licorne apparu à ' + req.body.cityL);
   }
   console.log('');
   // Empeche le bug de la disparition de la dernière instruction !
@@ -30,6 +30,6 @@ app.post('/', (req, res) => {
   res.end('hello');
 });
 
-app.listen(5002, () => {
-  console.log('app listening on port 5002!');
+app.listen(6002, () => {
+  console.log('app listening on port 6002!');
 });

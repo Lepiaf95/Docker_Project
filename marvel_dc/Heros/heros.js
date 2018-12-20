@@ -8,9 +8,10 @@ let score = 0;
 let cityH = 'Paris';
 
 app.post('/', (req, res) => {
+  console.log(req.body.countL + ' licorne => ' + req.body.cityL);
   if (cityH === req.body.cityV) {
-    score += req.body.count;
-    if (req.body.count === 0) {
+    score += req.body.countV;
+    if (req.body.countV === 0) {
       console.log('');
     } else {
       console.log('Ok t\'es mort !! J\'ai actuellement ' +
@@ -18,7 +19,7 @@ app.post('/', (req, res) => {
     }
   } else {
     cityH = req.body.cityV;
-    score += req.body.count;
+    score += req.body.countV;
     console.log('Coucou je suis à ' + cityH +
       ' ! Et j\'ai actuellement ' +
       score + ' victimes à mon compte');

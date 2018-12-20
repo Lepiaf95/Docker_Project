@@ -15,9 +15,20 @@ const options = {
   body: first
 };
 
+const options2 = {
+  method: 'POST',
+  url: process.env.LICORNES_URL,
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  json: true,
+  body: first
+};
+
 // Timer des requetes
 const begin = () => {
   rp(options);
+  rp(options2);
 };
 
 // eslint-disable-next-line require-await

@@ -5,6 +5,7 @@ services:
     build: ./Game
     environment:
       - VILAINS_URL=http://vilains:5001
+      - LICORNES_URL=http://licornes:6001
     ports:
       - "6666:3000"
 
@@ -12,6 +13,7 @@ services:
     build: ./Heros
     environment:
       - TRACKEUR_URL=http://trackeur:5002
+      - FOURNISSEUR_URL=http://fournisseur:6002
     ports:
       - "5000:5000"
     
@@ -28,3 +30,17 @@ services:
       - HEROS_URL=http://heros:5000
     ports:
       - "5002:5002"
+
+  licornes:
+    build: ./Licornes
+    environment:
+      - FOURNISSEUR_URL=http://fournisseur:6002
+    ports:
+      - "6001:6001"
+
+  fournisseur:
+    build: ./Fournisseur
+    environment:
+      - HEROS_URL=http://heros:5000
+    ports:
+      - "6002:6002"
