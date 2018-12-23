@@ -4,43 +4,40 @@ services:
   game:
     build: ./Game
     environment:
-      - VILAINS_URL=http://vilains:5001
-      - LICORNES_URL=http://licornes:6001
+      - VILAINS_URL=http://vilains:5001/vilains
+      - LICORNES_URL=http://licornes:6001/licornes
     ports:
       - "6666:3000"
 
   heros:
     build: ./Heros
-    environment:
-      - TRACKEUR_URL=http://trackeur:5002
-      - FOURNISSEUR_URL=http://fournisseur:6002
     ports:
       - "5000:5000"
     
   vilains:
     build: ./Vilains
     environment:
-      - TRACKEUR_URL=http://trackeur:5002
+      - TRACKEUR_URL=http://trackeur:5002/vilains
     ports:
       - "5001:5001"
 
   trackeur:
     build: ./Trackeur
     environment:
-      - HEROS_URL=http://heros:5000
+      - HEROS_URL=http://heros:5000/vilains
     ports:
       - "5002:5002"
 
   licornes:
     build: ./Licornes
     environment:
-      - FOURNISSEUR_URL=http://fournisseur:6002
+      - FOURNISSEUR_URL=http://fournisseur:6002/licornes
     ports:
       - "6001:6001"
 
   fournisseur:
     build: ./Fournisseur
     environment:
-      - HEROS_URL=http://heros:5000
+      - HEROS_URL=http://heros:5000/licornes
     ports:
       - "6002:6002"

@@ -7,8 +7,13 @@ app.use(bodyParser.json());
 let score = 0;
 let cityH = 'Paris';
 
-app.post('/', (req, res) => {
+app.post('/licornes', (req, res) => {
   console.log(req.body.countL + ' licorne => ' + req.body.cityL);
+  console.log('');
+  res.end('hello');
+});
+
+app.post('/vilains', (req, res) => {
   if (cityH === req.body.cityV) {
     score += req.body.countV;
     if (req.body.countV === 0) {

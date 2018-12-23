@@ -5,7 +5,7 @@ const rp = require('request-promise');
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/', (req, res) => {
+app.post('/licornes', (req, res) => {
   if (req.body.countL === 0) {
     console.log('');
   } else {

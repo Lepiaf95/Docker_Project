@@ -5,7 +5,7 @@ const rp = require('request-promise');
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/', (req, res) => {
+app.post('/vilains', (req, res) => {
   if (req.body.countV === 0) {
     console.log('');
   } else {

@@ -25,7 +25,7 @@ const options = {
   body: apparition
 };
 
-app.post('/', (req, res) => {
+app.post('/licornes', (req, res) => {
   console.log(req.body.start);
   rp(options);
 
