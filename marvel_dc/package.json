@@ -8,6 +8,7 @@
   "author": "Geoffrey PELISSIER, Atman MADADI, Alexandre SONNIC, Amine YAICI",
   "license": "ISC",
   "dependencies": {
+    "request-promise": "^4.2.2",
     "xo": "^0.23.0"
   },
   "xo": {

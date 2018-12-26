@@ -9,7 +9,7 @@ app.post('/licornes', (req, res) => {
   if (req.body.countL === 0) {
     console.log('');
   } else {
-    console.log('Licorne apparu à ' + req.body.cityL);
+    console.log(req.body.monture.licorne.nom + ' apparu à ' + req.body.cityL);
   }
   console.log('');
   // Empeche le bug de la disparition de la dernière instruction !

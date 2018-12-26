@@ -9,9 +9,9 @@
   "author": "Geoffrey PELISSIER, Atman MADADI, Alexandre SONNIC, Amine YAICI",
   "license": "ISC",
   "dependencies": {
-    "serverless": "^1.33.2",
-    "serverless-offline": "^3.31.3",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "serverless": "^1.33.2",
+    "serverless-offline": "^3.31.3"
   }
 }

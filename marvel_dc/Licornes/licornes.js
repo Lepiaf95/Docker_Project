@@ -12,7 +12,17 @@ const random = 0;
 const apparition = {
   city,
   cityL: city[random],
-  countL
+  countL,
+  monture: {
+    licorne: {
+      nom: 'licorne',
+      speed: 10
+    },
+    poney: {
+      nom: 'poney',
+      speed: 5
+    }
+  }
 };
 
 const options = {
