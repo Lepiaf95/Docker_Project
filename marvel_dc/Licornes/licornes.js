@@ -25,14 +25,9 @@ const apparition = {
   }
 };
 
-const options = {
-  method: 'POST',
-  url: process.env.FOURNISSEUR_URL,
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  json: true,
-  body: apparition
+const options = {method: 'POST', url: process.env.FOURNISSEUR_URL, headers: {
+  'Content-Type': 'application/json'
+}, json: true, body: apparition
 };
 
 app.post('/licornes', (req, res) => {
@@ -42,8 +37,8 @@ app.post('/licornes', (req, res) => {
   // Timer des requetes
   setInterval(async () => {
     apparition.countL = 1;
-    apparition.cityL =
-     city[Math.floor(Math.random() * Math.floor(city.length))];
+    apparition.cityL = city[Math.floor(
+      Math.random() * Math.floor(city.length))];
     await rp(options);
   }, 7000);
   console.log('');
