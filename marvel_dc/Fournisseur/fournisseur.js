@@ -15,14 +15,8 @@ app.post('/licornes', (req, res) => {
   // Empeche le bug de la disparition de la dernière instruction !
   // Attention potentiel probleme à venir...
 
-  const options = {
-    method: 'POST',
-    url: process.env.HEROS_URL,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    json: true,
-    body: req.body
+  const options = {method: 'POST', url: process.env.HEROS_URL, headers:
+      {'Content-Type': 'application/json'}, json: true, body: req.body
   };
 
   rp(options);
