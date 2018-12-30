@@ -5,8 +5,7 @@ const first = {
   start: 'Winter is comming'
 };
 
-const options = {
-  method: 'POST',
+const options = {method: 'POST',
   url: process.env.VILAINS_URL,
   headers: {
     'Content-Type': 'application/json'
